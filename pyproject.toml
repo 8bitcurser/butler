@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "butler"
+version = "0.1.0"
+description = "Butler is a telegram bot that can send you messages when upcoming google calendar events are about to happen"
+authors = ["Brujo <tomowl@pm.me>"]
+license = "Apache 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+google-api-python-client = "^2.86.0"
+google-auth-httplib2 = "^0.1.0"
+google-auth-oauthlib = "^1.0.0"
+python-telegram-bot = "^20.2"
+apscheduler = "^3.10.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
