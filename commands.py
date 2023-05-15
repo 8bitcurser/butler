@@ -42,10 +42,13 @@ async def events(context: CallbackContext = None) -> None:
     else:
         await context.bot.send_message(
             chat_id=context.job.chat_id,
-            text="No events for this week"
+            text="No events for today or tomorrow!"
         )
 
 async def start(update: Update, context: CallbackContext):
+    for job in context.job_queue.jobs():
+        job.schedule_removal()
+
     context.job_queue.run_daily(
         events,
         time=datetime.time(hour=12),

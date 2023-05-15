@@ -3,6 +3,9 @@ credentials.json
 token.json
 envs.json
 
+microsoft.gpg
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
