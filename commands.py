@@ -47,6 +47,10 @@ async def events(context: CallbackContext = None) -> None:
 
 async def start(update: Update, context: CallbackContext):
     for job in context.job_queue.jobs():
+        await context.bot.send_message(
+            chat_id=update.message.chat_id,
+            text="Job removed"
+        )
         job.schedule_removal()
 
     context.job_queue.run_daily(
